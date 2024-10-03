@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    #on deploy change  /api/api/public to api/public
+    RewriteRule ^$ /api/api/public/ [L]
+    RewriteRule (.*) public/$1 [L]
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
